@@ -6,6 +6,8 @@
   "author": "<gracias.claude@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "@remix-run/dev": "^2.11.2",
     "vite": "^5.4.2"
   }
 }
