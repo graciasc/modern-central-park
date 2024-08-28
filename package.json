@@ -1,0 +1,11 @@
+{
+  "name": "modern-central-park",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:graciasc/modern-central-park.git",
+  "author": "<gracias.claude@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^5.4.2"
+  }
+}
