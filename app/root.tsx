@@ -1,21 +1,27 @@
 // entry point for the app
 import { type LinksFunction } from "@remix-run/node";
 import { Links, Outlet } from "@remix-run/react";
+import { SunIcon } from "@radix-ui/react-icons";
 import "./styles/tailwind.css";
-// import { cssBundleHref } from "@remix-run/css-bundle";
+import {
+  NavigationMenuItem,
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuList,
+} from "~/components/ui/navigation-menu";
+import { cssBundleHref } from "@remix-run/css-bundle";
 
 // used for adding global styles, cdn and scripts
 // TODO: fix typescript so I don't have to cast
 export const links: LinksFunction = () => {
-  // picocss
   return [
     {
       rel: "stylesheet",
       href: "https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css",
     },
-  ];
-  //   cssBundleHref ? { rel: "stylesheet", href: cssBundleHref } : null,
-  // ].filter(Boolean) as any;
+    cssBundleHref ? { rel: "stylesheet", href: cssBundleHref } : null,
+  ].filter(Boolean);
 };
 
 export default function App() {
@@ -24,9 +30,33 @@ export default function App() {
       <head>
         <Links />
       </head>
-      <body>
+      <body className="p-4 h-screen bg-gray-800">
         <div>
-          <h1 className="text-teal-400">Hello Remix World</h1>
+          {
+            // make a navigation menu
+          }
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  <SunIcon className="mx-2 h-4 w-4" />
+                  Home
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/main"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Main
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <Outlet />
         </div>
       </body>
