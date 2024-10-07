@@ -13,9 +13,6 @@
 
 ## TODO's
 
-/\* TODO:
-
-- add flat routes
-- add nested routes
-- setup for src folder ( remix )
-  \*/
+- add flat routes ✅
+- add nested routes ✅
+- setup for src folder ( remix ) ✅

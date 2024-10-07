@@ -30,33 +30,34 @@ export default function App() {
       <head>
         <Links />
       </head>
-      <body className="p-4 h-screen bg-gray-800">
-        <div>
+      <body className="p-4 h-screen bg-gray-900">
+        <div className="">
           {
             // make a navigation menu
           }
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/"
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <SunIcon className="mx-2 h-4 w-4" />
-                  Home
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+          <div className="flex flex-1 content-between">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/"
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    Home
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/main"
-                  className={navigationMenuTriggerStyle()}
-                >
-                  Main
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/about"
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    About
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
           <Outlet />
         </div>
       </body>
