@@ -9,6 +9,8 @@ import {
   navigationMenuTriggerStyle,
   NavigationMenu,
   NavigationMenuList,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
 } from "~/components/ui/navigation-menu";
 import { cssBundleHref } from "@remix-run/css-bundle";
 
@@ -26,41 +28,39 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="h-screen">
       <head>
         <Links />
       </head>
-      <body className="p-4 h-screen bg-gray-900">
-        <div className="">
-          {
-            // make a navigation menu
-          }
-          <div className="flex flex-1 content-between">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    Home
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/about"
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    About
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
+      <body className="flex flex-col p-4 h-full bg-orange-500 ">
+        <Nav />
+        <div className="h-full">
           <Outlet />
         </div>
       </body>
     </html>
+  );
+}
+
+function Nav() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/about"
+            className={navigationMenuTriggerStyle()}
+          >
+            About
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }

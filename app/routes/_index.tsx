@@ -1,8 +1,9 @@
 import { Button } from "~/components/ui/button";
+import { Card } from "~/components/ui/card";
 export default function Index() {
   return (
-    <div>
-      <h1 className="text-teal-500 text-3xl font-bold underline">home page!</h1>
+    <div className="flex h-full items-center justify-center">
+      <Card className="p-4"> Card </Card>
     </div>
   );
 }
