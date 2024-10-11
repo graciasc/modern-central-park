@@ -2,6 +2,7 @@
 import { type LinksFunction } from "@remix-run/node";
 import { Links, Outlet, Scripts } from "@remix-run/react";
 import { SunIcon } from "@radix-ui/react-icons";
+
 import "./styles/tailwind.css";
 import {
   NavigationMenuItem,
