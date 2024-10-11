@@ -1,6 +1,6 @@
 // entry point for the app
 import { type LinksFunction } from "@remix-run/node";
-import { Links, Outlet } from "@remix-run/react";
+import { Links, Outlet, Scripts } from "@remix-run/react";
 import { SunIcon } from "@radix-ui/react-icons";
 import "./styles/tailwind.css";
 import {
@@ -34,8 +34,11 @@ export default function App() {
       </head>
       <body className="flex flex-col p-4 h-full bg-orange-500 ">
         <Nav />
+
         <div className="h-full">
           <Outlet />
+          {/* Needed to load scripts */}
+          <Scripts />
         </div>
       </body>
     </html>
@@ -54,10 +57,10 @@ function Nav() {
 
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="/about"
+            href="/morty"
             className={navigationMenuTriggerStyle()}
           >
-            About
+            Morty
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
