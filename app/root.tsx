@@ -9,8 +9,8 @@ import {
   navigationMenuTriggerStyle,
   NavigationMenu,
   NavigationMenuList,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
+  // NavigationMenuContent,
+  // NavigationMenuTrigger,
 } from "~/components/ui/navigation-menu";
 import { cssBundleHref } from "@remix-run/css-bundle";
 
@@ -28,14 +28,14 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html lang="en" className="h-screen">
+    <html lang="en" className="h-screen font-thin">
       <head>
         <Links />
       </head>
-      <body className="flex flex-col p-4 h-full bg-orange-500 ">
+      <body className="flex flex-col p-4 h-full bg-gradient-to-r from-orange-700 to-sky-400 ">
         <Nav />
 
-        <div className="h-full">
+        <div className="h-full" id="root">
           <Outlet />
           {/* Needed to load scripts */}
           <Scripts />
