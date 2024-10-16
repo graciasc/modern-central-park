@@ -12,8 +12,7 @@ export async function loader() {
 }
 
 export default function Index() {
-  const { image, id } = useLoaderData<typeof loader>();
-  console.log(image, id);
+  const { filePath, id } = useLoaderData<typeof loader>();
   const navigate = useNavigate();
   return (
     <div className="flex-col space-y-9 w-full h-full">
@@ -38,7 +37,7 @@ export default function Index() {
           <Suspense fallback={<div>Loading...</div>}>
             <img
               className="cursor-pointer h-full w-full object-cover rounded-xl"
-              src={image}
+              src={filePath}
             />
           </Suspense>
         </Card>

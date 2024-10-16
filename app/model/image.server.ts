@@ -6,27 +6,31 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export function getImage(id: number | undefined = undefined): {
-  id: number;
-  image: string;
-  allImages: { name: string; meta: string; id: number }[];
+export function getImage(id: string | undefined = undefined): {
+  id: string;
+  filePath: string;
+  allImages: { name: string; meta: string; id: string }[];
 } {
   const images = parseImages();
 
-  if (id !== undefined && id >= 0 && id < images.length) {
-    return { id, image: images[id].meta, allImages: images };
+  if (id !== undefined && Number(id) >= 0 && Number(id) < images.length) {
+    return { id: id.toString(), filePath: images[id].meta, allImages: images };
   }
 
   const totalImages = images.length;
   const randomId = Math.floor(Math.random() * totalImages);
   const randomImage = images[randomId];
 
-  return { id: randomId, image: randomImage.meta, allImages: images };
+  return {
+    id: randomId.toString(),
+    filePath: randomImage.meta,
+    allImages: images,
+  };
 }
 
 function parseImages() {
-  const imageDirRoute = path.join(__dirname, "../../public/assets");
-  const filesPath: { name: string; meta: string; id: number }[] = [];
+  const imageDirRoute = path.join(__dirname, "../../assets");
+  const filesPath: { name: string; meta: string; id: string }[] = [];
 
   if (!fs.existsSync(imageDirRoute)) {
     console.error(`Directory does not exist: ${imageDirRoute}`);
@@ -41,8 +45,8 @@ function parseImages() {
     if (statsOfFile.isFile()) {
       filesPath.push({
         name: file,
-        meta: `../../public/assets/${file}`,
-        id: i,
+        meta: `../../assets/${file}`,
+        id: i.toString(),
       });
     }
   });

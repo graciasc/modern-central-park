@@ -16,7 +16,8 @@
     "ui": "~/components/ui",
     "lib": "~/lib",
     "hooks": "~/hooks",
-    "model": "~/model"
+    "model": "~/model",
+    "resources": "~/routes/resources",
+    "assets": "~/assets"
   }
 }
-
