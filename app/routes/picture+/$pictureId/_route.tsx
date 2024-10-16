@@ -13,7 +13,6 @@ export function loader({ params }: LoaderFunctionArgs) {
 
 export default function Picture() {
   const data = useLoaderData<typeof loader>();
-  console.log(data);
   const { filePath: initialImage } = data;
   const imageFetcher = useFetcher<typeof loader>();
   const navigate = useNavigate();
