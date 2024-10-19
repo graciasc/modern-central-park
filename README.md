@@ -16,3 +16,14 @@
 - add flat routes ✅
 - add nested routes ✅
 - setup for src folder ( remix ) ✅
+
+## Next Steps
+
+- mobile view
+- integrate with rick and morty api
+- add to fly.io
+  - add dockerfile
+  - add dockercompose file
+  - add fly.toml
+  - add fly.oio action to github
+- add prefecthing for images
